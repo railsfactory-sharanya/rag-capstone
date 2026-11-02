@@ -1,6 +1,6 @@
 # Mealbox support RAG
 
-A FastAPI service that answers Mealbox customer questions from a corpus of FAQs and resolved tickets. Mealbox is a fictional weekly meal-kit delivery. Retrieval uses Qdrant. Part 1 is the corpus. Part 2 loads, chunks, embeds, and upserts it. Part 3 adds a category payload index and a plain top-3 similarity search.
+A FastAPI service that answers Mealbox customer questions from a corpus of FAQs and resolved tickets. Mealbox is a fictional weekly meal-kit delivery. Retrieval uses Qdrant. Part 1 is the corpus. Part 2 loads, chunks, embeds, and upserts it. Part 3 adds a category payload index and a plain top-3 similarity search. Part 4 adds an optional category filter, a title-overlap rerank, and one query rewrite.
 
 ## Corpus
 
@@ -60,3 +60,12 @@ python search.py "How do I pause for a month?"
 ```
 
 Embeds that question with the same MiniLM model and prints the top 3 points with score and payload. No category filter and no reranker. The default query should bring back `faq-017`.
+
+## Part 4: Retrieval
+
+```bash
+python retrieve.py
+python retrieve.py --category orders "the chicken arrived warm"
+```
+
+The default question is one plain search gets wrong. The script prints that top 3, then the top 3 after a query rewrite and a title-overlap rerank. `--category` limits the second search to one category. The measured before/after is in [`retrieval-notes.md`](retrieval-notes.md).
