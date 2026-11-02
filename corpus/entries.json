@@ -1,0 +1,386 @@
+[
+  {
+    "id": "faq-001",
+    "kind": "faq",
+    "title": "How do I reset my Mealbox password?",
+    "body": "On the sign-in screen, choose Forgot password and enter the email on the account. Mealbox sends one reset link. The link expires 30 minutes after it is sent, and it can be used only once. Open the newest email if you request the link more than once; older links stop working as soon as a newer one is sent. From a signed-in phone or browser, the same email is sent from Account, then Login and security, then Send password reset. Resetting the password signs out every other device. It does not change the email address on the account. If the message is not in the inbox after five minutes, check spam for mail from help@mealbox.example. A reset email is sent only when that address already belongs to an account; the screen always says the same thing so strangers cannot use it to test which emails are registered.",
+    "category": "account",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-002",
+    "kind": "faq",
+    "title": "How do I change the email address on my Mealbox account?",
+    "body": "Go to Account, then Login and security, then Email. Enter the new address and the current password. Mealbox sends a six-digit code to the new address. The code expires in 15 minutes. The account keeps the old email until that code is entered. A notice is also sent to the old email. Changing the email does not reset the password and does not move an existing password-reset link onto the new address. Request a fresh reset link if you still need one. Receipts already sent stay in the old inbox. Future receipts, cutoff reminders, and delivery mail go to the new address. Household members keep their own logins; changing the plan owner's email does not change a member's email.",
+    "category": "account",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-003",
+    "kind": "faq",
+    "title": "How do I change the name on my Mealbox account?",
+    "body": "Go to Account, then Profile, and edit First name and Last name. Save. The new name appears on the delivery label for the next box that has not been packed yet. A box already charged or already handed to the courier keeps the name that was printed on its label. The name on the bank or card statement comes from the card issuer. Mealbox cannot change that line. The profile name is also what support agents see in chat, so use the name you want agents to use.",
+    "category": "account",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-004",
+    "kind": "faq",
+    "title": "How do I delete my Mealbox account?",
+    "body": "Account deletion removes the login. It is separate from ending the weekly plan. Go to Account, then Profile, then Delete account. Mealbox emails a confirmation link that works for 7 days. During those 7 days you can cancel the deletion from that same email and sign in as usual. After 7 days the profile, saved addresses, household invites, dietary filters, and notification settings are removed within 30 days. A box that was already charged still ships to the address on the label. Receipts that were already emailed stay in your inbox. Mealbox does not keep a copy of the password. To stop boxes from arriving and keep the login, use Plan, then Cancel, instead of deleting the account. Signing up again later with the same email creates a new account. Previous menu choices are not restored.",
+    "category": "account",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-005",
+    "kind": "faq",
+    "title": "How do I turn on two-factor authentication?",
+    "body": "Mealbox two-factor authentication uses an authenticator app that generates a six-digit code. Text-message codes are not offered. Go to Account, then Login and security, then Two-factor, and scan the QR code with the authenticator app. Enter the current six-digit code to confirm. Mealbox then shows 8 recovery codes once. Store them somewhere outside the phone. Each recovery code works a single time. On later sign-ins, the password is followed by the current authenticator code. If you get a new phone, turn two-factor off from a signed-in device before wiping the old phone, then turn it on again. If you lose both the phone and the recovery codes, write to help@mealbox.example from the account email. Support checks that email plus the last four digits of the card on file, then clears two-factor so you can sign in and set it up again. Support cannot read the current authenticator code.",
+    "category": "account",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-006",
+    "kind": "faq",
+    "title": "How do I add another person in my household to the app?",
+    "body": "The plan owner can invite one other adult. Go to Account, then Household, then Invite, and enter their email. They create their own password from the invite. An invite expires after 14 days and can be sent again. The member can view the weekly menu, the recipe cards for delivered boxes, and the delivery tracking page. The member cannot change the plan size, the delivery day, the address, the card, the promo code, or cancellation. Those stay with the plan owner. Remove a member from Account, then Household, then Remove. Removing them signs them out and does not delete the plan. A member login does not get its own referral code. Only the plan owner has a referral code.",
+    "category": "account",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-007",
+    "kind": "faq",
+    "title": "How do I change Mealbox email, text, and push notifications?",
+    "body": "Go to Account, then Notifications. Email is on by default for three messages: the cutoff reminder at 12:00pm local time on the Wednesday before a box locks, the receipt when a charge posts, and the note when a box is out for delivery. You can turn each email off. Text messages exist only for the out-for-delivery note. Text is off until you add a US mobile number and turn that switch on. Mealbox does not send promo texts from this screen. Push notifications on the phone can mirror the receipt and the out-for-delivery note. The Wednesday cutoff reminder is email only. It is never sent as a push or a text. Phone-level Focus, Do Not Disturb, or a disabled notification channel can block push even when the in-app switch is on. Allow notifications for Mealbox in the phone settings if the in-app switch is on and pushes still do not appear.",
+    "category": "account",
+    "last_updated": "2026-05-20"
+  },
+  {
+    "id": "faq-037",
+    "kind": "faq",
+    "title": "How do I contact Mealbox support?",
+    "body": "In the app or on the website, open Help, then Chat. Chat is staffed from 9:00am to 9:00pm Eastern Time, seven days a week. You can also email help@mealbox.example. Email is answered within one business day. Write from the email on the account so support can find the plan. Include the delivery date and, for a damaged or missing item, a photo. Do not send a full card number, a password, or a two-factor code. Support can see the brand and last four digits of the card from the account. Billing disputes about a duplicate posted charge, a late box, a missing item, or a warm protein each have their own report path under Orders or in these help articles. Chat can start those reports if you are signed in. Household members can use chat. Questions about the card are answered only to the plan owner.",
+    "category": "account",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "ticket-001",
+    "kind": "ticket",
+    "title": "Resolved: I got an email that a new device signed in, and it was not me",
+    "body": "The customer received a Mealbox mail titled New sign-in on an Android phone in another state. They still had access to their own email and password. Support directed them to Account, then Login and security, then Sign out of all devices, and then to request a password reset from Forgot password. The reset link expired in 30 minutes and signing in with the new password cleared the other session. The customer also turned on authenticator-app two-factor from the same Login and security screen. Support did not change their email, because they still controlled the inbox. The card on file was reviewed from Billing, then Payment method; no new charge had been made by the other session. The customer confirmed the only devices still listed were their own laptop and their own phone. No credit was issued. This was an account-security reset, not a billing adjustment.",
+    "category": "account",
+    "last_updated": "2026-03-28"
+  },
+  {
+    "id": "faq-008",
+    "kind": "faq",
+    "title": "Which payment cards does Mealbox accept?",
+    "body": "Mealbox charges a Visa, Mastercard, American Express, or Discover card. The card must be valid for the delivery address's country, which is the United States. Enter the card under Billing, then Payment method, or at checkout for a first box. The name on the card can differ from the profile name. Mealbox stores a card token from the payment processor and shows only the brand and the last four digits. Full card numbers should not be sent in chat or email. Prepaid cards work only when they support recurring charges. If a prepaid card declines on the weekly charge, update the card and the next week will try the new card. Debit cards that are branded Visa or Mastercard are charged like credit cards. The bank may still label the debit as a purchase.",
+    "category": "billing",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-009",
+    "kind": "faq",
+    "title": "When does Mealbox charge my card?",
+    "body": "The card is charged at 6:00pm local time on Thursday for the following week's box, after that box has locked. Menu edits close at 9:00pm local time on the Wednesday before that Thursday charge. Example: a box scheduled for Tuesday, November 10, 2026 locks on Wednesday, November 4, 2026 at 9:00pm local time, and the card is charged on Thursday, November 5, 2026 at 6:00pm local time. Shipping is included in the weekly price. Tax is calculated from the delivery ZIP and appears as a separate line on the receipt. The 2-serving plan is $66.00 before tax. The 4-serving plan is $111.00 before tax. Each plan contains 3 recipes. A pause, a skip, or a cancellation that is saved before the Thursday 6:00pm charge stops that charge. A change made after 6:00pm does not reverse a charge that has already posted. The bank can show a pending authorization for a few hours before the posted charge. A pending line that drops off by itself is not a second charge.",
+    "category": "billing",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-010",
+    "kind": "faq",
+    "title": "How do Mealbox promo codes work?",
+    "body": "Enter a promo code in the code field at checkout on the website or in the app, before you pay. One code can be applied to a box. A code takes a percent off the pre-tax plan price, or it takes a fixed dollar amount off, depending on the offer in the email or ad where you found it. Tax is recalculated on the discounted price. A code is not applied to a box that was already charged. Write to support with the code and the receipt date if you forgot to enter it; support can apply a code only when it is still unexpired and the offer rules allow it on that account. A code can be limited to a first box or to an end date. Those limits are checked when you select Apply. The referral credit under Account, then Referrals, is a separate balance. It is not entered in the promo code field. If a referral credit is already attached to the box, remove it before applying a promo code. The checkout keeps whichever discount was applied first and will not combine them.",
+    "category": "billing",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-011",
+    "kind": "faq",
+    "title": "How do I update the card Mealbox charges?",
+    "body": "Go to Billing, then Payment method, then Replace card. Enter the new card and save. The next Thursday 6:00pm charge uses the new card. A charge that already posted stays on the previous card. Mealbox does not move a posted charge from one card to another. If the bank reissued the same card with a new expiration date or a new number, replace the card here even when the last four digits look familiar. A failed charge uses the retry rules on the failed-payment article. Replacing the card after a failed retry lets the following week charge normally. It does not, by itself, pack a box that was already skipped because the retry failed.",
+    "category": "billing",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-012",
+    "kind": "faq",
+    "title": "Where do I find Mealbox receipts?",
+    "body": "A receipt email is sent to the account email when a weekly charge posts. The same receipts are listed under Billing, then Receipts, for 24 months. Each receipt shows the plan size, the pre-tax amount, the promo or referral credit if one was applied, the tax, the last four digits of the card, and the delivery date the charge was for. Mealbox does not mail paper invoices. A household member cannot open Billing. The plan owner can forward the receipt email. For a charge older than 24 months, write to help@mealbox.example from the account email and include the approximate date. Support can resend a stored receipt. Support does not create a new charge when resending a receipt.",
+    "category": "billing",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-013",
+    "kind": "faq",
+    "title": "What happens if my Mealbox payment fails?",
+    "body": "If the Thursday 6:00pm charge is declined, Mealbox retries the same card once, on Friday at 8:00am local time. You get an email at the time of the decline and another email if the Friday retry fails. There is no late fee. If the Friday retry succeeds, the box is packed on the normal schedule. If the Friday retry fails, that week's box is not packed and you are not charged for it. The plan stays active. Update the card under Billing, then Payment method. The next week's Thursday charge uses the new card if it is saved before that Thursday at 6:00pm. A failed week is not delivered later in the week and it is not held for pickup. Choose the recipes again for the following week; the failed week does not keep a half-built menu.",
+    "category": "billing",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-014",
+    "kind": "faq",
+    "title": "How does the Mealbox referral credit work?",
+    "body": "The plan owner's referral code is on Account, then Referrals. Share that code with a friend. The friend enters it in the promo-style referral field at their first checkout, not in a later week. The friend receives $20 off the pre-tax price of their first box. The plan owner receives a $20 account credit after that friend's first box is marked delivered, not when the friend merely creates an account. The credit sits on Account, then Referrals, and it applies automatically to the owner's next Thursday charge. It cannot be paid out as cash. It cannot be moved to another account. It cannot be combined on the same box with a promo code. If a promo code is already applied, the referral credit waits for the next box that has no promo code. A household member does not have a separate referral code. Self-referrals, where the same person uses a second email, are removed when support reviews them, and both the $20 discount and the $20 credit are reversed.",
+    "category": "billing",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-015",
+    "kind": "faq",
+    "title": "Why do I see two Mealbox charges in one week?",
+    "body": "A single week produces one posted charge: $66.00 before tax on the 2-serving plan, or $111.00 before tax on the 4-serving plan, plus tax. The bank can also show a pending authorization that disappears on its own. A pending line that never posts is not a second payment and is not refunded, because it was not captured. Two posted charges in the same week, with two receipt emails, are a duplicate capture. The later receipt is refunded to the same card within 3 business days. You do not need to call the bank first. Write to help@mealbox.example or use in-app chat and include both receipt dates. Keep both boxes if two boxes actually arrive. If only one box arrives, the extra charge is still refunded. A charge from a previous week that posts late on the bank statement can sit next to the new week. Compare the delivery date printed on each receipt before treating them as duplicates.",
+    "category": "billing",
+    "last_updated": "2026-07-22"
+  },
+  {
+    "id": "ticket-002",
+    "kind": "ticket",
+    "title": "Resolved: I was charged twice for the same Mealbox week",
+    "body": "The customer was on the 2-serving plan. Receipt emails showed two posted charges of $66.00 plus tax, both on Thursday, July 16, 2026, both for the Tuesday, July 21, 2026 delivery. Only one box arrived. Support confirmed two captured payments and refunded the second capture to the same Visa ending 4412. The refund was submitted the day the ticket was opened and the customer was told to allow 3 business days for the card issuer to show it. The pending-authorization explanation did not apply, because both lines had receipt emails and both had posted. No plan change was made. The customer kept the one box that arrived.",
+    "category": "billing",
+    "last_updated": "2026-07-22"
+  },
+  {
+    "id": "ticket-003",
+    "kind": "ticket",
+    "title": "Resolved: SAVE20 says the code is invalid at checkout",
+    "body": "The customer typed the code SAVE20 at checkout. The site returned This code is invalid. SAVE20 takes 20 percent off the pre-tax price of the first box only. It applies to accounts that have never had a paid Mealbox box, and only when a referral credit is not already attached to that same box. The code expired on August 31, 2026. This ticket was opened on July 14, 2026, so expiry was not the reason yet. The account had a delivered, paid box in March 2026, so SAVE20 was correctly refused. Support did not override the code. The customer had also applied a friend's referral credit on the same checkout. Checkout keeps the discount that was applied first and will not stack SAVE20 with a referral credit. Support removed nothing, because the referral credit was valid and SAVE20 was not valid on this account. After August 31, 2026, SAVE20 returns the same invalid message for every account because the code is expired. A different code has to be entered for a later offer. The general promo field still works for other unexpired codes.",
+    "category": "billing",
+    "last_updated": "2026-07-14"
+  },
+  {
+    "id": "faq-016",
+    "kind": "faq",
+    "title": "How do I cancel my Mealbox plan?",
+    "body": "Go to Plan, then Cancel plan, and confirm. Cancellation stops future Thursday charges. A box that was already charged still ships, and that charge is not reversed by the cancellation itself. After that box, no further box is packed and the login stays available. Saved dietary filters and the delivery address remain for 90 days so the plan can be turned back on from Plan, then Reactivate. After 90 days those saved settings are cleared. The card token is kept with the payment processor until the account is deleted. For several weeks away while you want the plan to remain in place, use Plan, then Pause. For a single upcoming week, use Plan, then Skip week. Cancel is the path that ends the weekly schedule. Deleting the login is a different action under Account, then Profile, then Delete account.",
+    "category": "subscription",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-017",
+    "kind": "faq",
+    "title": "How do I pause Mealbox for several weeks while I am away?",
+    "body": "Go to Plan, then Pause. Choose a length from 1 to 8 consecutive weeks. The pause starts with the next box that has not been charged yet. A box already charged at Thursday 6:00pm still arrives, and the pause count begins with the week after it. During a pause Mealbox does not charge the card and does not pack a box. The menu for paused weeks is hidden. The delivery address, plan size, delivery day, and dietary filters stay as they are. The plan becomes active again on its own when the pause ends. You can end a pause early from Plan, then Resume, if you do so before the Wednesday 9:00pm cutoff of the week you want a box. A pause longer than 8 weeks is done by pausing again when the first pause is close to ending, or by cancelling. Pause keeps the same account. It is the path to use when you want a month away and then the same plan back, without re-entering the card.",
+    "category": "subscription",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-018",
+    "kind": "faq",
+    "title": "How do I skip only next week's Mealbox?",
+    "body": "Go to Plan, then Skip week, on the upcoming week. The skip has to be saved before that week's cutoff, which is Wednesday at 9:00pm local time. The Thursday 6:00pm charge for that week is then not made, and that week is not packed. Later weeks stay on the schedule and still need recipe choices. There is no yearly cap on skips. Skipping one week leaves the plan active. If you want one to eight weeks off in a row and you do not want to skip them one at a time, use Plan, then Pause. If you want the schedule to end, use Plan, then Cancel plan. A skip cannot be applied to a week that is already charged. For that week the box still comes. You can skip the week after it if that later week is before its own cutoff.",
+    "category": "subscription",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-019",
+    "kind": "faq",
+    "title": "How do I switch between the 2-serving and 4-serving Mealbox plan?",
+    "body": "Go to Plan, then Plan size, and choose 2-serving or 4-serving. Save the change before Wednesday at 9:00pm local time if it should apply to the next uncharged box. The 2-serving plan is 3 recipes, 2 portions each, at $66.00 before tax per week. The 4-serving plan is the same 3 recipes, 4 portions each, at $111.00 before tax per week. Shipping is included either way. Tax depends on the delivery ZIP. A size change does not change which three recipes you picked. It changes the ingredient amounts packed for those recipes. After the Thursday 6:00pm charge, the size is locked for that box. Change it for a later week instead. Household members see the new size on the menu but only the plan owner can change it.",
+    "category": "subscription",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-020",
+    "kind": "faq",
+    "title": "When is the cutoff to change my upcoming Mealbox?",
+    "body": "The upcoming box locks at 9:00pm local time on Wednesday. Before that time you can change recipes, plan size, delivery day, and the default address, and you can skip that week or start a pause. At 9:00pm the box is sent to the packing list. The card is charged at 6:00pm local time on Thursday. Example: a box scheduled for Tuesday, November 10, 2026 locks on Wednesday, November 4, 2026 at 9:00pm local time, and the card is charged on Thursday, November 5, 2026 at 6:00pm local time. A reminder email goes out at 12:00pm local time on that Wednesday. After the lock, recipe swaps and address edits apply to the following week. Holiday weeks can use an earlier cutoff. Those dates are listed on the holiday article and override this Wednesday rule for those weeks only.",
+    "category": "subscription",
+    "last_updated": "2026-10-01"
+  },
+  {
+    "id": "faq-021",
+    "kind": "faq",
+    "title": "How do I reactivate a cancelled Mealbox plan?",
+    "body": "Go to Plan, then Reactivate, while you are signed in. If the cancellation was less than 90 days ago, the delivery address, delivery day, and dietary filters are still stored and are selected again for you. You can change them before the next cutoff. If more than 90 days have passed, enter an address and filters again. If the card has expired, Billing asks for a new card before reactivation finishes. The first box after reactivation follows the normal Wednesday 9:00pm cutoff and Thursday 6:00pm charge. Reactivation does not charge you at the moment you press the button unless that week's charge window is already open and the box is still before cutoff, in which case the usual Thursday charge applies. Previous referral credits that were still unused remain on the account. A deleted account cannot be reactivated. Create a new account instead.",
+    "category": "subscription",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-022",
+    "kind": "faq",
+    "title": "What comes inside a Mealbox delivery?",
+    "body": "Each weekly box holds 3 recipes. On the 2-serving plan the ingredients are packed for 2 people. On the 4-serving plan the same recipes are packed for 4 people. You also receive a printed recipe card for each recipe, ice packs, and insulation. The recipe steps are repeated in the app under Recipes for 12 weeks after the delivery date. Staples such as salt, oil, and pepper are not included unless the recipe card lists them in the bag. The box is packed in a facility that handles milk, egg, fish, shellfish, tree nuts, peanuts, wheat, soy, and sesame. Ice packs are meant to hold a safe temperature until 8 hours after the courier marks the box delivered, if the box is left out of direct sun. Reuse or recycle the liner according to the symbol printed on it. Mealbox does not pick up packaging.",
+    "category": "subscription",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-023",
+    "kind": "faq",
+    "title": "What delivery days and hours can I choose?",
+    "body": "Choose Tuesday or Thursday under Plan, then Delivery day. The window on either day is 8:00am to 8:00pm local time. Mealbox does not offer a narrower window and does not offer weekend delivery. The day has to be saved before the Wednesday 9:00pm cutoff to affect the next uncharged box. A day change after the Thursday charge applies to the following week. The tracking page shows the courier and a live status on the morning of the delivery day, after the first scan. Before that morning, the tracking link is not active. The courier is a regional partner named on that tracking page. The partner can differ by ZIP code.",
+    "category": "delivery",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-024",
+    "kind": "faq",
+    "title": "How do I change the default address for future Mealbox deliveries?",
+    "body": "Go to Account, then Addresses, edit the default address, and save. The new address is used for every box that has not locked yet. Save it before Wednesday at 9:00pm local time for it to apply to the upcoming week. Include a street number. The courier delivers to residential and business street addresses. What you type here becomes the label address. Delivery notes, such as a gate code, are a separate field under Account, then Addresses, then Delivery notes. Changing the address does not change the card, the plan size, or the delivery day. If a ZIP code is outside the delivery area, the save is rejected and the previous address stays in place. A household member can view the address and cannot edit it.",
+    "category": "delivery",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-025",
+    "kind": "faq",
+    "title": "Can I change the address after my Mealbox has shipped?",
+    "body": "After the courier has the box, the address on the label cannot be changed and the box cannot be redirected to a new street. The same limit applies once the box is packed, even if the tracking scan has not posted yet. Meet the courier, ask a neighbor to take the box inside, or leave the delivery note you already saved. If nobody can receive that box, refuse it or leave it unopened and contact support from Help, then Chat, or help@mealbox.example. Support can refund the pre-tax plan price and the tax for that week when the box cannot be received, and you should not cook the contents. Update Account, then Addresses, so the following week uses the address you can actually receive. The default-address edit never rewrites a label that is already printed.",
+    "category": "delivery",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-026",
+    "kind": "faq",
+    "title": "How long is the food safe after Mealbox is dropped off?",
+    "body": "Ice packs in a closed box, kept out of direct sun, are rated for 8 hours after the courier marks the box delivered. Bring the box inside during that time and refrigerate the protein. If meat, poultry, fish, or a dairy pouch feels warm, or the seal is torn, do not cook that item. Report it within 24 hours under Orders, then Report a problem, then Warm or damaged, and attach a photo. That report follows the damaged-protein credit, which refunds the affected recipe. It is a different report from a late box. A box that is late uses Orders, then Report a problem, then Late. The 8-hour rating starts at the delivered scan, including when the scan is inside the 8:00am to 8:00pm window. A box scanned as delivered at 1:00pm should be in the refrigerator by 9:00 that evening.",
+    "category": "delivery",
+    "last_updated": "2026-08-09"
+  },
+  {
+    "id": "faq-027",
+    "kind": "faq",
+    "title": "How do I leave a gate code or other delivery notes?",
+    "body": "Go to Account, then Addresses, then Delivery notes. You can store 120 characters. Typical notes are a gate code, a building entrance, or a request to leave the box at the side door and out of the sun. The note is shown to the courier for every future box until you edit it. Save note changes before the Wednesday 9:00pm cutoff so the upcoming box includes them. A note is not a guaranteed handoff and it does not create an appointment. Do not put a full card number or a password in the note. The courier sees the note. A gate code saved only in an email to support is not copied onto the label. Enter it in Delivery notes.",
+    "category": "delivery",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-028",
+    "kind": "faq",
+    "title": "What if nobody is home when Mealbox arrives?",
+    "body": "The default delivery setting is leave at the door. The courier leaves the box in the coolest available spot at the address and marks it delivered. You do not have to be home. If you turn on Require signature under Account, then Addresses, the courier needs a person at the door. They attempt delivery once. If nobody answers, they retry once the same day. If the second attempt also fails, the box is returned and Mealbox refunds that week's pre-tax price and tax. A returned box is not redelivered later in the week. Signature required stays on until you turn it off, so the next week follows the same rule. Leave-at-door boxes are not returned merely because you were out.",
+    "category": "delivery",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-029",
+    "kind": "faq",
+    "title": "Where does Mealbox deliver, and do you ship to PO boxes?",
+    "body": "Mealbox delivers to street addresses in the contiguous United States and the District of Columbia. Alaska and Hawaii are outside the delivery area. PO boxes, APO addresses, FPO addresses, and parcel lockers are not served, because the box needs a doorstep and cannot go through a postal box. Business street addresses are allowed. If a ZIP code is outside the area, Account, then Addresses, refuses to save it and explains that the ZIP is not served. Someone else may receive the box at a street address you can use, if you put that street address on the account before the Wednesday cutoff. The courier will not hold a box at a warehouse for pickup.",
+    "category": "delivery",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-030",
+    "kind": "faq",
+    "title": "What changes for Mealbox deliveries around Thanksgiving and Christmas 2026?",
+    "body": "Thanksgiving Day 2026 is Thursday, November 26. Tuesday, November 24 deliveries stay on Tuesday. Thursday, November 26 deliveries move to Wednesday, November 25. The cutoff for this Thanksgiving week is earlier than usual: Monday, November 16, 2026 at 9:00pm local time. The menu that week has 8 recipes to choose from instead of the usual larger menu, and you still receive 3 recipes. Christmas Day 2026 is Friday, December 25. Both the Tuesday, December 22 and the Thursday, December 24 deliveries move to Monday, December 21, 2026. The cutoff for that Christmas week is Monday, December 14, 2026 at 9:00pm local time. You can skip either holiday week from Plan, then Skip week, before that week's cutoff. A skip in a holiday week follows the normal skip rules and does not create an extra fee. After those weeks, cutoffs return to Wednesday at 9:00pm.",
+    "category": "delivery",
+    "last_updated": "2026-10-01"
+  },
+  {
+    "id": "faq-036",
+    "kind": "faq",
+    "title": "How do I switch my Mealbox delivery day between Tuesday and Thursday?",
+    "body": "Go to Plan, then Delivery day, and choose Tuesday or Thursday. Save before Wednesday at 9:00pm local time for the change to affect the next box that has not been charged. Both days use the 8:00am to 8:00pm window. After Thursday at 6:00pm, the charged box keeps the day already on its label. The new day starts the following week. Switching the day does not move the street address. To change where the box goes, use Account, then Addresses. Switching the day does not skip a week. If you do not want a box in a given week, use Plan, then Skip week, before that week's cutoff.",
+    "category": "delivery",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "ticket-004",
+    "kind": "ticket",
+    "title": "Resolved: my Mealbox arrived in the middle of the night",
+    "body": "The customer's Tuesday, September 15, 2026 box had an 8:00am to 8:00pm window. The courier scan was 3:10am on Wednesday, September 16, which is more than 6 hours after the window ended. The customer reported it that morning under Orders, then Report a problem, then Late. One box arrived, the ice packs were still cold, and the customer refrigerated the food. Because the box did arrive before 10:00am on the next calendar day, support issued the late-delivery account credit of $15.00. A full refund was not issued. The $15.00 credit applied to the next Thursday charge. This path is the late-box credit. It is separate from a missing-ingredient credit and separate from a warm-protein recipe refund. The customer did not need to send a photo because the tracking scan already showed 3:10am.",
+    "category": "delivery",
+    "last_updated": "2026-09-18"
+  },
+  {
+    "id": "faq-031",
+    "kind": "faq",
+    "title": "How do I swap one recipe in my upcoming Mealbox?",
+    "body": "Open Menu, select the recipe you want to replace, then Swap, and pick another recipe that is offered that week for your plan. The swap has to be saved before Wednesday at 9:00pm local time. You still receive 3 recipes. A swap changes which recipe is packed. It does not change the 2-serving or 4-serving price. After the cutoff, that week's recipes are locked. Swaps made later apply only if you are editing the following week. If the recipe you want is missing because a dietary filter is on, clear or adjust the filter on Menu, then Filters. Sold-out recipes are marked Sold out and cannot be selected. Skipping the week is a different control under Plan, then Skip week. Swap does not remove a week.",
+    "category": "orders",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-032",
+    "kind": "faq",
+    "title": "How do dietary filters work on the Mealbox menu?",
+    "body": "On Menu, then Filters, you can limit the weekly choices to vegetarian, vegan, or gluten-free recipes. You can turn on more than one filter. The menu then shows only recipes that match every filter you turned on. You still choose 3 recipes. Filters do not change the weekly price. If fewer than 3 matching recipes are offered in a week, the menu says so and you can turn a filter off to see more recipes, or skip that week. A filter only changes which recipes are listed. The facility still packs the recipes you select, and it handles milk, egg, fish, shellfish, tree nuts, peanuts, wheat, soy, and sesame even when a filter is on. Read the allergen list on each recipe before you cook.",
+    "category": "orders",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-033",
+    "kind": "faq",
+    "title": "Where do I see allergens and the full ingredient list?",
+    "body": "Open a recipe from the Menu or from Recipes and expand Allergens and ingredients. The list names the items packed for that recipe and highlights milk, egg, fish, shellfish, tree nuts, peanuts, wheat, soy, and sesame when they are ingredients in that recipe. The same list is printed on the recipe card in the bag. The box is packed in a facility that handles all nine of those allergens, so a filter that hides a recipe is not an allergen-free guarantee. If an ingredient list and the bag disagree, trust the bag label for what was packed and write to support with a photo of the bag and the recipe name. Support can explain the line and, if the packed item is wrong for the recipe you ordered, treat it as a missing or wrong item.",
+    "category": "orders",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-034",
+    "kind": "faq",
+    "title": "Where do I find recipe cards after my box arrives?",
+    "body": "Each recipe includes a printed card in its bag. The same steps are in the app and on the website under Recipes. A delivered recipe stays in that list for 12 weeks after its delivery date. After 12 weeks it drops off the list. Printing from the app is available from the recipe page while it is still listed. Household members can open Recipes. They cannot change the menu. If a printed card is missing and the recipe is visible in the app, use the app copy. If the recipe is missing from the app as well, report it within 48 hours under Orders, then Report a problem, then Missing item, so support can confirm the order.",
+    "category": "orders",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "faq-035",
+    "kind": "faq",
+    "title": "How do I see my past Mealbox orders?",
+    "body": "Go to Orders. The upcoming week is at the top. Below it, past weeks are listed by delivery date for 24 months. Open a week to see the 3 recipes, the plan size, the delivery address used on the label, and the tracking status that was final. Receipts and card charges are not on this screen. Those are under Billing, then Receipts. A skipped or paused week appears as Skipped and has no recipes. A week whose payment failed and was not packed appears as Not packed. Household members can open Orders and the tracking page. They cannot open billing. Orders older than 24 months are not shown. Write to help@mealbox.example from the account email with the approximate delivery date if you need an older week confirmed.",
+    "category": "orders",
+    "last_updated": "2026-04-15"
+  },
+  {
+    "id": "ticket-005",
+    "kind": "ticket",
+    "title": "Resolved: a lime was missing from one recipe bag",
+    "body": "The customer was on the 2-serving plan. The Tuesday delivery included all 3 recipes, and one recipe was missing the lime listed on its card. Nothing else was missing. They reported it 6 hours after the delivered scan, inside the 48-hour window, under Orders, then Report a problem, then Missing item. They attached a photo of the bag. Because items were missing from only one recipe, support issued the ingredient credit: $10.00 on the 2-serving plan. The 4-serving ingredient credit would have been $16.00. A full recipe refund was not used, because the rest of the recipe was still cookable. One or more missing items inside a single recipe produce that recipe's ingredient credit only. Refund the whole box only when all 3 recipes are missing something. The credit was applied to the next Thursday charge. The customer was told to buy a replacement lime locally. This ticket is the missing-item path, not the late-box path and not the warm-protein path.",
+    "category": "orders",
+    "last_updated": "2026-08-02"
+  },
+  {
+    "id": "ticket-006",
+    "kind": "ticket",
+    "title": "Resolved: the chicken arrived warm and the pouch was swollen",
+    "body": "The box was marked delivered at 11:20am, inside the 8:00am to 8:00pm window, so it was not a late delivery. The customer opened it at 1:00pm. The chicken pouch was warm and swollen. They did not cook it. They reported it within 24 hours under Orders, then Report a problem, then Warm or damaged, with a photo. They are on the 2-serving plan, so one recipe is $22.00 of the $66.00 weekly price. Support credited $22.00 for that recipe. On a 4-serving plan the matching credit would be $37.00, which is one third of $111.00. The other two recipes were cold and were not credited. The $15.00 late credit was not used, because the scan was inside the delivery window. The customer was told to discard the chicken and not taste it. Ice packs are rated for 8 hours after the delivered scan; this report was about temperature on arrival, not about the box sitting out past 8 hours.",
+    "category": "orders",
+    "last_updated": "2026-08-09"
+  },
+  {
+    "id": "ticket-007",
+    "kind": "ticket",
+    "title": "Resolved: the iOS app crashes at checkout with CHECKOUT-409",
+    "body": "On iPhone app versions 4.11.0, 4.11.1, and 4.12.0, checkout closed immediately when the cart contained both a referral credit and a promo code at the same time. The app showed the code CHECKOUT-409 on the next launch. The charge was not made, because the crash happened before payment. Version 4.12.1, released on September 2, 2026, fixes this crash. The customer was on 4.12.0. Support told them to update in the App Store and then check out with only one discount. Checkout keeps the first discount applied and will not stack a referral credit with a promo code, including SAVE20. A second workaround, if the App Store update is not available yet, is to check out on the website at mealbox.example, which did not have this crash. This bug is separate from the promo field that ignores paste. That paste issue is tracked as PAY-218 and can still happen on version 4.12.1.",
+    "category": "bugs",
+    "last_updated": "2026-09-03"
+  },
+  {
+    "id": "ticket-008",
+    "kind": "ticket",
+    "title": "Resolved: the Android app shows last week's delivery date",
+    "body": "Android app version 4.10.3 showed the previous week's delivery date on the home screen. The packed box, the delivery label, and the Orders screen all showed the correct upcoming date. Pulling to refresh did not fix the home screen. Version 4.10.4, released on August 18, 2026, fixes the home-screen date. The customer updated from the Play Store and the home screen matched Orders. No refund was issued, because the box they received was the box they had been charged for. If Orders and the label disagree with each other, that is a different problem and should be reported in chat with a photo of the label. This ticket covers only the home screen being one week behind on version 4.10.3.",
+    "category": "bugs",
+    "last_updated": "2026-08-18"
+  },
+  {
+    "id": "ticket-009",
+    "kind": "ticket",
+    "title": "Resolved: the website menu spins forever and never shows recipes",
+    "body": "The customer used Chrome with an ad blocker. The menu spinner continued and no recipes appeared. The Mealbox API calls from the menu page go to api.mealbox.example. The blocker was treating that host as an ad endpoint and cancelling the requests. Mealbox confirmed the menu service was up, because the same account loaded recipes in a private window with the blocker off, and the iOS app loaded the menu on cellular. The fix for this account was to allow api.mealbox.example in the blocker, or to turn the blocker off for mealbox.example. No app update was required. This was not the iOS CHECKOUT-409 crash and not a failed payment. If the menu still spins in a private window with blockers off, support treats it as an outage and checks the status internally rather than asking the customer to change the browser.",
+    "category": "bugs",
+    "last_updated": "2026-06-02"
+  },
+  {
+    "id": "ticket-010",
+    "kind": "ticket",
+    "title": "Resolved: I never get Mealbox push notifications",
+    "body": "The customer's in-app switch for push was on, and they still received no pushes. Two separate causes were checked. First, the Wednesday cutoff reminder is email only. It is not sent as a push on any phone, so a missing Wednesday push is expected. Receipt and out-for-delivery pushes are the ones the phone can show. Second, the phone was in a Focus mode that silenced Mealbox, and the iOS notification permission for the app was off. Support had them allow notifications for Mealbox in the phone settings and remove Mealbox from the silenced list. The next out-for-delivery push arrived. No reinstall was required. Android users with the same symptom should enable the Mealbox notification channel in system settings. This is not fixed by an app-store update. Account, then Notifications, only controls whether Mealbox attempts the send. The phone controls whether the attempt can appear.",
+    "category": "bugs",
+    "last_updated": "2026-05-20"
+  },
+  {
+    "id": "ticket-011",
+    "kind": "ticket",
+    "title": "Resolved: the iOS promo code field ignores paste",
+    "body": "On iPhone app version 4.12.1 the promo code field ignores a pasted value. The field stays empty after paste, or it drops the pasted characters when the customer taps Apply. Typing the code on the keyboard works. The website checkout on mealbox.example accepts paste. Engineering tracks the paste failure as PAY-218. A fix is planned for app version 4.13.0, which is not released yet. The customer's code was a current welcome code, not SAVE20. SAVE20 was already expired by the time this ticket was handled on October 12, 2026, and this customer had not typed SAVE20. Support confirmed the typed code applied 15 percent off the pre-tax price. No crash occurred. CHECKOUT-409, which closed the app when a referral credit and a promo code were both present, was already fixed in 4.12.1 and did not happen here. Until 4.13.0, type the code on iOS or paste it on the website.",
+    "category": "bugs",
+    "last_updated": "2026-10-12"
+  }
+]
