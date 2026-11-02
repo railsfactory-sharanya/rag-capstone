@@ -1,0 +1,8 @@
+.venv/
+.DS_Store
+
+# Created by the Qdrant container
+qdrant_storage/
+
+# Bytecode next to our scripts after we start running Python
+__pycache__/
