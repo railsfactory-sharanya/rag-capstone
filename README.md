@@ -1,6 +1,6 @@
 # Mealbox support RAG
 
-A FastAPI service that answers Mealbox customer questions from a corpus of FAQs and resolved tickets. Mealbox is a fictional weekly meal-kit delivery. Retrieval uses Qdrant. Part 1 is the corpus. Part 2 loads, chunks, embeds, and upserts it.
+A FastAPI service that answers Mealbox customer questions from a corpus of FAQs and resolved tickets. Mealbox is a fictional weekly meal-kit delivery. Retrieval uses Qdrant. Part 1 is the corpus. Part 2 loads, chunks, embeds, and upserts it. Part 3 adds a category payload index and a plain top-3 similarity search.
 
 ## Corpus
 
@@ -50,4 +50,13 @@ python ingest.py --fresh
 python ingest.py
 ```
 
-The first command creates the `mealbox` collection and upserts 48 points. The second command upserts the same point ids, so the count stays 48. Each entry is one chunk. The embedded text is the title plus the body, and the payload keeps `entry_id`, `title`, `category`, `last_updated`, and `kind`.
+The first command creates the `mealbox` collection and upserts 48 points. The second command upserts the same point ids, so the count stays 48. Each entry is one chunk. The embedded text is the title plus the body, and the payload keeps `entry_id`, `title`, `category`, `last_updated`, and `kind`. Ingest also creates a keyword payload index on `category`.
+
+## Part 3: Raw similarity search
+
+```bash
+python search.py
+python search.py "How do I pause for a month?"
+```
+
+Embeds that question with the same MiniLM model and prints the top 3 points with score and payload. No category filter and no reranker. The default query should bring back `faq-017`.

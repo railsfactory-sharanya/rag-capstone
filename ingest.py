@@ -7,8 +7,10 @@ second run replaces the same points and the count stays at 48.
     python ingest.py --fresh   # empty collection, then 48 points
     python ingest.py           # same 48 points, count unchanged
 
-The category payload index and the top-3 similarity search are Part 3.
-Vectors are embedded here because a Qdrant point cannot be stored without one.
+This script also creates the keyword payload index on category. A fresh
+collection would otherwise come back without it. The plain top-3 search
+is search.py. Vectors are embedded here because a Qdrant point cannot be
+stored without one.
 """
 
 from __future__ import annotations
@@ -164,16 +166,32 @@ def ensure_collection(client: QdrantClient) -> None:
 
     48 points sit under Qdrant's default full_scan_threshold (10,000), so
     search on this collection is exact. That is the same default you saw
-    in the Qdrant capstone. The category payload index is added in Part 3;
-    the payload stored here already has the category field.
+    in the Qdrant capstone. The category payload index is separate from
+    that vector index: it lets a later filter skip points whose category
+    does not match, and --fresh must create it again with the collection.
     """
     if client.collection_exists(COLLECTION_NAME):
         print(f"Collection {COLLECTION_NAME} already exists; upserting in place")
+    else:
+        print(f"Creating collection {COLLECTION_NAME} (cosine, {VECTOR_SIZE}-d)")
+        client.create_collection(
+            collection_name=COLLECTION_NAME,
+            vectors_config=models.VectorParams(size=VECTOR_SIZE, distance=models.Distance.COSINE),
+        )
+    ensure_category_index(client)
+
+
+def ensure_category_index(client: QdrantClient) -> None:
+    """Index payload field category as a keyword. Safe to call again."""
+    info = client.get_collection(COLLECTION_NAME)
+    if "category" in (info.payload_schema or {}):
+        print("Payload index on category already exists")
         return
-    print(f"Creating collection {COLLECTION_NAME} (cosine, {VECTOR_SIZE}-d)")
-    client.create_collection(
+    print("Creating payload index on category")
+    client.create_payload_index(
         collection_name=COLLECTION_NAME,
-        vectors_config=models.VectorParams(size=VECTOR_SIZE, distance=models.Distance.COSINE),
+        field_name="category",
+        field_schema=models.PayloadSchemaType.KEYWORD,
     )
 
 
