@@ -145,6 +145,20 @@ def print_reranked(rows: list[tuple[float, float, object]]) -> None:
         print(f"   text: {preview(str(payload.get('text', '')))}")
 
 
+def retrieve_ranked(client, model: SentenceTransformer, query: str, category: str | None = None):
+    """Return the raw top 3 and the rewritten, filtered, reranked top 3.
+
+    `before` ignores category so a caller can still show the plain baseline.
+    `after` is what generate.py reads.
+    """
+    rewritten = rewrite_query(query)
+    plain_vector = embed(model, query)
+    rewritten_vector = plain_vector if rewritten == query else embed(model, rewritten)
+    before = search(client, plain_vector, TOP_K, None)
+    after = rerank(rewritten, search(client, rewritten_vector, CANDIDATE_K, category_filter(category)))[:TOP_K]
+    return rewritten, plain_vector, before, after
+
+
 def main() -> None:
     args = parse_args()
     query = args.query.strip()
@@ -156,30 +170,26 @@ def main() -> None:
         raise SystemExit(f"Collection {COLLECTION_NAME} is missing. Run: python ingest.py --fresh")
     ensure_category_index(client)
 
-    rewritten = rewrite_query(query)
-    query_filter = category_filter(args.category)
     print(f"query: {query}")
     if args.category:
         print(f"category filter: {args.category}")
     else:
         print("category filter: none")
+
+    print(f"Loading {MODEL_NAME}")
+    model = SentenceTransformer(MODEL_NAME, device="cpu")
+    rewritten, plain_vector, before, after = retrieve_ranked(client, model, query, args.category)
     if rewritten == query:
         print("rewrite: unchanged")
     else:
         print(f"rewrite: {rewritten}")
-
-    print(f"Loading {MODEL_NAME}")
-    model = SentenceTransformer(MODEL_NAME, device="cpu")
-    plain_vector = embed(model, query)
-    rewritten_vector = plain_vector if rewritten == query else embed(model, rewritten)
     print(f"query vector norm={float(np.linalg.norm(plain_vector)):.4f}")
 
     print(f"\nbefore: plain top {TOP_K}")
-    print_plain(search(client, plain_vector, TOP_K, None))
+    print_plain(before)
 
     print(f"\nafter: rewrite, then top {CANDIDATE_K} reranked to {TOP_K}")
-    candidates = search(client, rewritten_vector, CANDIDATE_K, query_filter)
-    print_reranked(rerank(rewritten, candidates)[:TOP_K])
+    print_reranked(after)
 
 
 if __name__ == "__main__":

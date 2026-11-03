@@ -1,6 +1,6 @@
 # Mealbox support RAG
 
-A FastAPI service that answers Mealbox customer questions from a corpus of FAQs and resolved tickets. Mealbox is a fictional weekly meal-kit delivery. Retrieval uses Qdrant. Part 1 is the corpus. Part 2 loads, chunks, embeds, and upserts it. Part 3 adds a category payload index and a plain top-3 similarity search. Part 4 adds an optional category filter, a title-overlap rerank, and one query rewrite.
+A FastAPI service that answers Mealbox customer questions from a corpus of FAQs and resolved tickets. Mealbox is a fictional weekly meal-kit delivery. Retrieval uses Qdrant. Part 1 is the corpus. Part 2 loads, chunks, embeds, and upserts it. Part 3 adds a category payload index and a plain top-3 similarity search. Part 4 adds an optional category filter, a title-overlap rerank, and one query rewrite. Part 5 answers from those chunks, or refuses when the top score is too low.
 
 ## Corpus
 
@@ -69,3 +69,14 @@ python retrieve.py --category orders "the chicken arrived warm"
 ```
 
 The default question is one plain search gets wrong. The script prints that top 3, then the top 3 after a query rewrite and a title-overlap rerank. `--category` limits the second search to one category. The measured before/after is in [`retrieval-notes.md`](retrieval-notes.md).
+
+## Part 5: Grounded answers
+
+Put a Groq key in `.env` as `GROQ_API_KEY=...`. That file is gitignored.
+
+```bash
+python generate.py "How do I pause for a month?"
+python generate.py "Can Mealbox send a team to cook and serve dinner at my venue for a wedding of 80 guests?"
+```
+
+The script retrieves with the Part 4 path. If the top chunk's cosine is below 0.50, it prints `I don't have information on that.` and does not call the model. Otherwise Groq (`openai/gpt-oss-120b`) writes an answer that cites entry ids.
