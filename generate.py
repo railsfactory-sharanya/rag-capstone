@@ -1,7 +1,8 @@
 """Answer a Mealbox question from reranked chunks, or abstain.
 
-Uses the Part 4 retrieval path. If the top chunk's cosine is below
-MIN_COSINE, the model is not called.
+Uses the Part 4 retrieval path. If the top chunk's rerank total is below
+MIN_COSINE, the model is not called. The total is cosine plus 0.15 times
+title overlap, the same number retrieve.py sorts on.
 
     python generate.py "How do I pause for a month?"
     python generate.py "Can I book weekly calls with a Mealbox dietitian who will build a marathon-training menu for me?"
@@ -20,8 +21,8 @@ from sentence_transformers import SentenceTransformer
 from ingest import COLLECTION_NAME, MODEL_NAME, ensure_category_index, get_client
 from retrieve import retrieve_ranked
 
-# Highest unanswerable top cosine measured here was 0.4744 (dietitian question).
-# Lowest answerable top cosine in that same check was 0.5309 (warm chicken).
+# Compared with the rerank total, not the raw cosine.
+# Dietitian total is 0.4851. Charged-twice ticket total is 0.6238.
 MIN_COSINE = 0.50
 ABSTAIN = "I don't have information on that."
 GROQ_MODEL = "openai/gpt-oss-120b"
@@ -109,16 +110,15 @@ def main() -> None:
         print(f"answer: {ABSTAIN}")
         return
 
-    _, _, top = ranked[0]
+    rerank_total, _, top = ranked[0]
     payload = top.payload or {}
-    cosine = float(top.score)
     print(
-        f"top: entry_id={payload.get('entry_id')} cosine={cosine:.4f} "
-        f"threshold={MIN_COSINE:.2f}"
+        f"top: entry_id={payload.get('entry_id')} rerank={rerank_total:.4f} "
+        f"cosine={float(top.score):.4f} threshold={MIN_COSINE:.2f}"
     )
     if rewritten != question:
         print(f"rewrite: {rewritten}")
-    if cosine < MIN_COSINE:
+    if rerank_total < MIN_COSINE:
         print(f"answer: {ABSTAIN}")
         return
 

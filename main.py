@@ -1,7 +1,7 @@
 """Mealbox support API.
 
 POST /query streams an answer from the Part 4 retrieval path, or the
-abstain sentence when the top cosine is below the Part 5 cutoff.
+abstain sentence when the top rerank total is below the Part 5 cutoff.
 POST /ingest upserts one entry into the running collection.
 
     uvicorn main:app --reload
@@ -88,6 +88,24 @@ def _source_ids(ranked: list) -> list[str]:
     return ids
 
 
+def prepare_query(question: str, resources: AppResources):
+    """Run retrieval and the rerank-total gate.
+
+    Returns `(source_ids, ranked, rerank_total)`. The total is `ranked[0][0]`,
+    cosine plus title overlap, the number `rerank` sorts on. `source_ids` is
+    empty when that total is below MIN_COSINE. `ranked` is still the top 3,
+    so a caller can see what the gate rejected. `generate.py` uses the same
+    comparison.
+    """
+    _, _, _, ranked = retrieve_ranked(resources.qdrant, resources.embedder, question)
+    if not ranked:
+        return [], [], None
+    rerank_total = float(ranked[0][0])
+    if rerank_total < MIN_COSINE:
+        return [], ranked, rerank_total
+    return _source_ids(ranked), ranked, rerank_total
+
+
 def _stream_abstain() -> Iterator[str]:
     yield json.dumps({"source_ids": []}) + "\n"
     yield ABSTAIN
@@ -105,7 +123,7 @@ def _stream_answer(question: str, ranked: list) -> Iterator[str]:
             "content": {"text/plain": {"example": STREAM_EXAMPLE}},
             "description": (
                 "A stream. The first line is JSON with the entry ids sent to the model. "
-                "The rest is the answer text. Below the cosine cutoff, source_ids is empty "
+                "The rest is the answer text. Below the rerank-total cutoff, source_ids is empty "
                 "and the body is the abstain sentence."
             ),
         }
@@ -115,9 +133,8 @@ def query(
     body: QueryRequest,
     resources: Annotated[AppResources, Depends(get_resources)],
 ):
-    _, _, _, ranked = retrieve_ranked(resources.qdrant, resources.embedder, body.question)
-    cosine = float(ranked[0][2].score) if ranked else None
-    if cosine is None or cosine < MIN_COSINE:
+    source_ids, ranked, _ = prepare_query(body.question, resources)
+    if not source_ids:
         stream = _stream_abstain()
     else:
         try:

@@ -79,7 +79,7 @@ python generate.py "How do I pause for a month?"
 python generate.py "Can Mealbox send a team to cook and serve dinner at my venue for a wedding of 80 guests?"
 ```
 
-The script retrieves with the Part 4 path. If the top chunk's cosine is below 0.50, it prints `I don't have information on that.` and does not call the model. Otherwise Groq (`openai/gpt-oss-120b`) writes an answer that cites entry ids.
+The script retrieves with the Part 4 path. If the top chunk's rerank total is below 0.50, it prints `I don't have information on that.` and does not call the model. Otherwise Groq (`openai/gpt-oss-120b`) writes an answer that cites entry ids. The rerank total is cosine plus a title-overlap bonus. `POST /query` uses the same cutoff.
 
 ## Part 6: FastAPI
 
@@ -123,3 +123,17 @@ curl -s -X POST http://127.0.0.1:8000/ingest \
 This writes Qdrant only. `corpus/entries.json` is unchanged. `python ingest.py` puts the original 48 texts back and leaves `faq-099` in place. `python ingest.py --fresh` reloads the file and drops `faq-099`.
 
 `python search.py`, `python retrieve.py`, and `python generate.py` still run on their own. They do not go through this server.
+
+## Part 7: Evaluation
+
+```bash
+python evaluate.py
+```
+
+Scores the 15 questions in [`eval/questions.json`](eval/questions.json) with the same retrieval and rerank-total cutoff as `POST /query`. Context recall is the share of expected entry ids that were actually passed to the model. Faithfulness is 1 when the answer cites one of those expected ids and every citation came from that list. An empty expected list is a question the corpus does not answer: both scores are 1 only when the service abstains. [`evaluation.md`](evaluation.md) records the run before this cutoff (0.800) and the run after (0.933).
+
+```bash
+pytest
+```
+
+Three tests. A second upsert of the corpus leaves the point count unchanged. A retrieval limited to `orders` returns only that category, including `ticket-006`. The three questions in `corpus.md` come back as `I don't have information on that.` with an empty source list. That test patches the Groq call and does not read `.env`. Qdrant must already be running. The first pytest loads MiniLM.

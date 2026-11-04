@@ -7,3 +7,4 @@ qdrant_storage/
 
 # Bytecode next to our scripts after we start running Python
 __pycache__/
+.pytest_cache/

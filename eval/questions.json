@@ -1,0 +1,77 @@
+[
+  {
+    "id": "q01",
+    "question": "How do I pause for a month?",
+    "expected": ["faq-017"]
+  },
+  {
+    "id": "q02",
+    "question": "How do I cancel my plan?",
+    "expected": ["faq-016"]
+  },
+  {
+    "id": "q03",
+    "question": "I only want to skip next week.",
+    "expected": ["faq-018"]
+  },
+  {
+    "id": "q04",
+    "question": "I am traveling for a month and do not want boxes",
+    "expected": ["faq-017"]
+  },
+  {
+    "id": "q05",
+    "question": "I will be away for several weeks and do not want a box",
+    "expected": ["faq-017"]
+  },
+  {
+    "id": "q06",
+    "question": "SAVE20 says invalid",
+    "expected": ["ticket-003"]
+  },
+  {
+    "id": "q07",
+    "question": "How do promo codes work?",
+    "expected": ["faq-010"]
+  },
+  {
+    "id": "q08",
+    "question": "How does the referral credit work?",
+    "expected": ["faq-014"]
+  },
+  {
+    "id": "q09",
+    "question": "the chicken arrived warm",
+    "expected": ["ticket-006"]
+  },
+  {
+    "id": "q10",
+    "question": "A lime was missing from the bag",
+    "expected": ["ticket-005"]
+  },
+  {
+    "id": "q11",
+    "question": "My box arrived in the middle of the night",
+    "expected": ["ticket-004"]
+  },
+  {
+    "id": "q12",
+    "question": "I was charged twice for the same week",
+    "expected": ["ticket-002"]
+  },
+  {
+    "id": "q13",
+    "question": "Can Mealbox send a team to cook and serve dinner at my venue for a wedding of 80 guests?",
+    "expected": []
+  },
+  {
+    "id": "q14",
+    "question": "Can I book weekly calls with a Mealbox dietitian who will build a marathon-training menu for me?",
+    "expected": []
+  },
+  {
+    "id": "q15",
+    "question": "I run a cafe. Can I buy Mealbox ingredients wholesale and resell the cooked plates?",
+    "expected": []
+  }
+]
