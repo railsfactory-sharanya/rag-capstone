@@ -45,15 +45,25 @@ def format_context(rows: list) -> str:
     return "\n\n".join(blocks)
 
 
-def generate_answer(question: str, context: str) -> str:
+class MissingGroqKey(RuntimeError):
+    """Raised before any HTTP call when .env has no GROQ_API_KEY."""
+
+
+def groq_api_key() -> str:
     load_dotenv(Path(__file__).resolve().parent / ".env")
     api_key = os.environ.get("GROQ_API_KEY", "").strip()
     if not api_key:
-        raise SystemExit("GROQ_API_KEY is missing. Put it in .env as GROQ_API_KEY=...")
-    client = Groq(api_key=api_key)
-    completion = client.chat.completions.create(
+        raise MissingGroqKey("GROQ_API_KEY is missing. Put it in .env as GROQ_API_KEY=...")
+    return api_key
+
+
+def iter_answer_tokens(question: str, context: str):
+    """Yield answer text as Groq produces it. Skips the separate reasoning field."""
+    client = Groq(api_key=groq_api_key())
+    stream = client.chat.completions.create(
         model=GROQ_MODEL,
         temperature=0,
+        stream=True,
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {
@@ -62,7 +72,20 @@ def generate_answer(question: str, context: str) -> str:
             },
         ],
     )
-    return (completion.choices[0].message.content or "").strip()
+    for chunk in stream:
+        if not chunk.choices:
+            continue
+        delta = chunk.choices[0].delta
+        text = getattr(delta, "content", None) if delta is not None else None
+        if text:
+            yield text
+
+
+def generate_answer(question: str, context: str) -> str:
+    try:
+        return "".join(iter_answer_tokens(question, context)).strip()
+    except MissingGroqKey as exc:
+        raise SystemExit(str(exc)) from None
 
 
 def main() -> None:

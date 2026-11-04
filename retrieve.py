@@ -149,7 +149,7 @@ def retrieve_ranked(client, model: SentenceTransformer, query: str, category: st
     """Return the raw top 3 and the rewritten, filtered, reranked top 3.
 
     `before` ignores category so a caller can still show the plain baseline.
-    `after` is what generate.py reads.
+    `after` is what generate.py and POST /query read.
     """
     rewritten = rewrite_query(query)
     plain_vector = embed(model, query)

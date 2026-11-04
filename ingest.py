@@ -68,23 +68,39 @@ def load_entries(path: Path = CORPUS_PATH) -> list[dict]:
 
     seen: set[str] = set()
     for entry in entries:
-        missing = [field for field in REQUIRED_FIELDS if field not in entry]
-        if missing:
-            raise ValueError(f"Entry is missing {missing}: {entry.get('id', entry)}")
-        entry_id = str(entry["id"]).strip()
-        if not entry_id:
-            raise ValueError("Entry id is empty")
+        entry_id = validate_entry(entry)
         if entry_id in seen:
             raise ValueError(f"Duplicate entry id {entry_id}")
         seen.add(entry_id)
-        if entry["kind"] not in KINDS:
-            raise ValueError(f"{entry_id} has kind {entry['kind']!r}, expected faq or ticket")
-        if entry["category"] not in CATEGORIES:
-            raise ValueError(f"{entry_id} has unknown category {entry['category']!r}")
-        datetime.strptime(entry["last_updated"], "%Y-%m-%d")
-        if not clean_text(entry["title"]) or not clean_text(entry["body"]):
-            raise ValueError(f"{entry_id} has an empty title or body after cleaning")
     return entries
+
+
+def validate_entry(entry: dict) -> str:
+    """Reject one row that ingest.py and POST /ingest both refuse.
+
+    Returns the stripped entry id. Uniqueness is the file loader's job:
+    posting an id that is already a point overwrites that point.
+    """
+    if not isinstance(entry, dict):
+        raise ValueError("Entry must be a JSON object")
+    missing = [field for field in REQUIRED_FIELDS if field not in entry]
+    if missing:
+        raise ValueError(f"Entry is missing {missing}: {entry.get('id', entry)}")
+    entry_id = str(entry["id"]).strip()
+    if not entry_id:
+        raise ValueError("Entry id is empty")
+    if entry["kind"] not in KINDS:
+        raise ValueError(f"{entry_id} has kind {entry['kind']!r}, expected faq or ticket")
+    if entry["category"] not in CATEGORIES:
+        raise ValueError(f"{entry_id} has unknown category {entry['category']!r}")
+    updated = entry["last_updated"]
+    try:
+        datetime.strptime(updated, "%Y-%m-%d")
+    except (TypeError, ValueError):
+        raise ValueError(f"{entry_id} has last_updated {updated!r}, expected YYYY-MM-DD") from None
+    if not clean_text(str(entry["title"])) or not clean_text(str(entry["body"])):
+        raise ValueError(f"{entry_id} has an empty title or body after cleaning")
+    return entry_id
 
 
 def entry_to_chunk(entry: dict) -> dict:
@@ -119,6 +135,15 @@ def chunk_entries(entries: list[dict]) -> list[dict]:
 def point_id_for(entry_id: str) -> str:
     """Stable Qdrant id. The same entry id always returns the same UUID."""
     return str(uuid.uuid5(uuid.NAMESPACE_URL, f"{ID_PREFIX}{entry_id}"))
+
+
+def point_exists(client: QdrantClient, entry_id: str) -> bool:
+    """True when this entry id already has a point. A miss is an empty list."""
+    found = client.retrieve(
+        collection_name=COLLECTION_NAME,
+        ids=[point_id_for(entry_id)],
+    )
+    return bool(found)
 
 
 def embed_chunks(chunks: list[dict]) -> np.ndarray:
